@@ -1,0 +1,13 @@
+﻿@page "/simple"
+@attribute [Authorize]
+
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavManager
+@inject IJSRuntime JSRuntime
+@inject Blazored.LocalStorage.ILocalStorageService localStore
+@inject ApplicationSettingsModel settings
+@inject IApiService api
+
+<Button @onclick="DrawGraph">Read data from API</Button>
+
+@ReadResponse

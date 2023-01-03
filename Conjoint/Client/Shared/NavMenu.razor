@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager Navigation
+@inject SignOutSessionStateManager SignOutManager
+
+<nav class="navbar navbar-dark navbar-expand-md bg-dark py-3">
+    <div class="container">
+        <img class="img-fluid img-logo" src="img/client-logo.svg">
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-lumanity">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-lumanity">
+            <ul class="navbar-nav ms-auto">
+                <AuthorizeView>
+                    <Authorized>
+                        <li class="nav-item">
+                            <NavLink class="nav-link" href="/simple">
+                                Simulation
+                            </NavLink>
+                        </li>
+                    </Authorized>
+                </AuthorizeView>
+                <li class="nav-item">
+                    <LoginDisplay />
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

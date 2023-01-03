@@ -1,0 +1,17 @@
+﻿@page "/authentication/{action}"
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+<WhiteHeader>
+    <Header>
+        Authentication in progress...
+    </Header>
+    <ChildContent>
+        <p>
+            <RemoteAuthenticatorView Action="@Action" />
+        </p>
+    </ChildContent>
+</WhiteHeader>
+
+@code {
+    [Parameter] public string Action { get; set; }
+}
